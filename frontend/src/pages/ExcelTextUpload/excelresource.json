@@ -1,0 +1,38 @@
+{
+  "fileTypes": [
+    { "id": 0, "name": "Select File", "fileName": "" },
+    { "id": 1, "name": "Text File", "fileName": "text_file_sample.txt" },
+    { "id": 2, "name": "Faculty Reg", "fileName": "facultyreg_2024.xlsx" },
+    { "id": 3, "name": "Subject Master", "fileName": "subject_master_sample.xlsx" },
+    { "id": 4, "name": "Sections", "fileName": "sections_sample.xlsx" },
+    { "id": 5, "name": "Valid Questions", "fileName": "valid_questions_sample.xlsx" },
+    { "id": 6, "name": "Paper Review", "fileName": "review_2024.xlsx" },
+    { "id": 10, "name": "Revaluation", "fileName": "revaluation_sample.xlsx" },
+    { "id": 11, "name": "MasterData", "fileName": "master_data_sample.xlsx" },
+    { "id": 12, "name": "Dummy Upload", "fileName": "dummy_upload_sample.xlsx" },
+    { "id": 7, "name": "Staff Wise Paper Assign", "fileName": "staff_paper_assign_sample.xlsx" },
+    { "id": 8, "name": "Import Ip Table", "fileName": "import_ip_table_sample.xlsx" },
+    { "id": 9, "name": "Sms Send", "fileName": "sms_send_sample.xlsx" },
+    { "id": 13, "name": "Staff Master", "fileName": "staff_master_sample.xlsx" },
+    { "id": 14, "name": "Staff Wise Paper", "fileName": "staff_wise_paper_assign_2024.xlsx" },
+    { "id": 15, "name": "Text Test", "fileName": "text_file_sample.txt" },
+    { "id": 16, "name": "Subject Wise Script", "fileName": "subject_attendance.xlsx" },
+    { "id": 17, "name": "TCE Review", "fileName": "thiyagaraja_review_sample.xlsx" },
+    { "id": 18, "name": "TCE Auditing", "fileName": "Auditing_Samplexlsx.xlsx" }
+  ],
+  "ExamMonth": [
+    { "id": 0, "name": "May" },
+    { "id": 2, "name": "Nov" }
+  ],
+  "ExamYear": [
+    { "id": 0, "name": "2025" },
+    { "id": 1, "name": "2026" },
+    { "id": 2, "name": "2027" }
+  ],
+  "DegreeName": [
+    { "id": "01", "name": "E & T" },
+    { "id": "02", "name": "MEDICAL" },
+    { "id": "04", "name": "AGRICULTURE" },
+    { "id": "05", "name": "FSH" }
+  ]
+}

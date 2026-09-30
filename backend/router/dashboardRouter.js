@@ -1,0 +1,23 @@
+const router = require('express').Router();
+const { protect, admin } = require('../middleware/authMiddleware');
+const { bankDetailsIfscUpsert,chiefEvaluatorPaymentUpdate,chiefEvaluatorDetailsSubjectCount,examinerPaymentDetails,examinerPaymentUpdate,adminDashboardChartData,campus_Details,Examiner_Payment_Challan,tada_allowance,evaluatorDetailsSubjectCount,userBankDetailsUpdate,userBankDetailsStaff,subcode_Fetech ,dashboard_Data_Subcode,dashboard_Data_Subcode_Cheif,userBankDetails,deleteValuationPaymentMaster} =  require('../controller/userDashboardController');
+
+router.post('/subcode_fetch', protect, subcode_Fetech);
+router.post('/dashboard-data-subcode', protect, dashboard_Data_Subcode);
+router.get('/dashboard-data-subcode-chief', protect, dashboard_Data_Subcode_Cheif);
+router.get('/user/bank-details', protect, userBankDetails);
+router.get('/user/bank-details-staff', protect, userBankDetailsStaff);
+router.post('/user/bank-details', protect,  userBankDetailsUpdate);
+router.post('/user/bank-details-ifsc', protect, bankDetailsIfscUpsert);
+router.get('/user/evaluator-details-subjectcount', protect, evaluatorDetailsSubjectCount);
+router.get('/user/chief-evaluator-details-subjectcount', protect, chiefEvaluatorDetailsSubjectCount);
+//router.post('/user/evaluator-details-subjectcount', protect, evaluatorDetailsSubjectCount);
+router.get('/tada-allowance', protect, tada_allowance);
+router.post('/examiner-payment-challan', protect, Examiner_Payment_Challan);
+router.post('/examiner-payment-update', protect,  examinerPaymentUpdate);
+router.post('/chief-evaluator-payment-update', protect,  chiefEvaluatorPaymentUpdate);
+router.get('/campus-details', protect, campus_Details);
+router.post('/admindashboard-chart-data', protect, adminDashboardChartData);
+router.get('/examiner-payment-details', protect, examinerPaymentDetails);
+router.delete('/examiner-payment-master/:id', protect, deleteValuationPaymentMaster);
+module.exports = router;

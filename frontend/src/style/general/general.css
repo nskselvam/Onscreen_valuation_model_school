@@ -1,0 +1,107 @@
+/* Global Reset - No white space or unwanted scrollbars */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+#root {
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Layout */
+.main-layout {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 0px);
+    margin-top: 0px;
+    position: relative;
+    overflow: hidden;
+    gap: 0;
+}
+
+.main-layout.no-navbar {
+    height: 100vh;
+    margin-top: 0;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    transition: margin-left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    height: 100%;
+    background: #ffffff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content.no-navbar-page {
+    height: 100vh;
+    padding: 0;
+}
+
+.main-content::-webkit-scrollbar {
+    display: none;
+}
+
+.main-content.no-sidebar {
+    margin-left: 0;
+}
+
+.main-content.with-sidebar-expanded {
+    margin-left: 309px;
+}
+
+.main-content.with-sidebar-collapsed {
+    margin-left: 0;
+}
+
+/* Render Page */
+.render-page {
+    background-color: #63656700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content.with-sidebar-expanded,
+    .main-content.with-sidebar-collapsed {
+        margin-left: 0;
+    }
+    
+    .sidebar-container {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar-container.expanded {
+        transform: translateX(0);
+    }
+}

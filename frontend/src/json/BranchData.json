@@ -1,0 +1,36 @@
+{
+    "BranchMasterData": [
+        {
+            "id": "01",
+            "name": "E & T"
+        },
+        {
+            "id": "02",
+            "name": "MEDICAL"
+        },
+        {
+            "id": "03",
+            "name": "AGRICULTURE"
+        },
+        {
+            "id": "05",
+            "name": "FSH"
+        },
+        {
+            "id": "06",
+            "name": "MGT"
+        },
+        {
+            "id": "91",
+            "name": "FSH Arrear"
+        },
+        {
+            "id": "18",
+            "name": "TCE"
+        },
+        {
+            "id": "19",
+            "name": "TCA"
+        }
+    ]
+}

@@ -1,0 +1,372 @@
+.upload-excel-container {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  min-height: calc(100vh - 80px);
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.upload-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: none;
+  background: white;
+}
+
+.card-header-custom {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border: none;
+}
+
+.card-header-custom h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-header-custom p {
+  margin: 0.5rem 0 0 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.upload-form {
+  padding: 2rem;
+}
+
+.form-label-custom {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.required-field {
+  color: #dc3545;
+  margin-left: 0.25rem;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-custom {
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  font-weight: 500;
+  color: #495057;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.select-custom:focus {
+  border-color: #667eea;
+  background-color: white;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.file-upload-area {
+  border: 2px dashed #cbd5e0;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.file-upload-area:hover {
+  border-color: #a0aec0;
+  background-color: #e9ecef;
+}
+
+.file-upload-area.drag-active {
+  border-color: #667eea;
+  background-color: #e8ebff;
+}
+
+.file-input-hidden {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.upload-icon {
+  font-size: 2rem;
+  color: white;
+}
+
+.upload-text-primary {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.upload-text-secondary {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.file-selected-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #28a745;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.file-size-text {
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+.remove-file-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  transition: color 0.2s;
+}
+
+.remove-file-btn:hover {
+  color: #c82333;
+  text-decoration: underline;
+}
+
+.selected-details-card {
+  background: linear-gradient(135deg, #e8ebff 0%, #f0e8ff 100%);
+  border: 1px solid #667eea;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.selected-details-title {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detail-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.detail-label {
+  font-size: 0.75rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.detail-value {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.btn-reset {
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: #e9ecef;
+  border: none;
+  color: #495057;
+  transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+  background-color: #dee2e6;
+  transform: translateY(-2px);
+}
+
+.btn-submit {
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-submit:disabled {
+  background: #ced4da;
+  cursor: not-allowed;
+}
+
+.info-alert {
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #cfe2ff;
+  background-color: #e7f1ff;
+  padding: 1.25rem;
+}
+
+.info-alert-header {
+  font-weight: 600;
+  color: #084298;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-alert ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #084298;
+}
+
+.info-alert li {
+  margin-bottom: 0.25rem;
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.spinner-custom {
+  width: 50px;
+  height: 50px;
+}
+
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.error-alert {
+  max-width: 500px;
+}
+
+/* Excel Preview Styles */
+.excel-preview-card {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.excel-preview-card .card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #28a745;
+}
+
+.excel-preview-card .card-header {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.excel-preview-card .table {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.excel-preview-card .table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #343a40 !important;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem;
+  white-space: nowrap;
+}
+
+.excel-preview-card .table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.excel-preview-card .table td {
+  padding: 0.6rem;
+  vertical-align: middle;
+}
+
+.excel-preview-card .table td:first-child {
+  font-weight: 600;
+  background-color: #f8f9fa;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+}

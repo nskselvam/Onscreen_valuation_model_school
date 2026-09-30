@@ -1,0 +1,403 @@
+.user-roll-master {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 30px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  margin-bottom: 0;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+/* Card Styling */
+.user-roll-master .card {
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.user-roll-master .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Controls */
+.user-roll-master .form-select-lg {
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.user-roll-master .form-select-lg:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.action-buttons .btn {
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Table Styling */
+.user-roll-table {
+  font-size: 0.95rem;
+}
+
+.user-roll-table thead {
+  background-color: #f8f9fa;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.user-roll-table thead th {
+  font-weight: 600;
+  color: #2d3748;
+  border-bottom: 2px solid #dee2e6;
+  padding: 15px 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.user-roll-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.user-roll-table tbody tr:hover {
+  background-color: #f7fafc;
+}
+
+.user-roll-table tbody td {
+  padding: 12px;
+  vertical-align: middle;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Navigation Name Cell */
+.nav-name strong {
+  color: #2d3748;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.nav-name small {
+  font-size: 0.8rem;
+  color: #718096;
+  line-height: 1.3;
+}
+
+/* Hierarchy Badge */
+.hierarchy-badge {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  font-weight: 600;
+}
+
+/* Route Path */
+.route-path {
+  background-color: #f7fafc;
+  color: #2d3748;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Form Inputs in Table */
+.user-roll-table .form-control {
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.user-roll-table .form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.15rem rgba(102, 126, 234, 0.15);
+}
+
+.user-roll-table small.text-muted {
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 2px;
+}
+
+/* Switch Styling */
+.form-check-input:checked {
+  background-color: #48bb78;
+  border-color: #48bb78;
+}
+
+.form-check-label {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Status Badge */
+.user-roll-table .badge {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Loading State */
+.user-roll-master .spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Alert Styling */
+.user-roll-master .alert {
+  border-radius: 10px;
+  border: none;
+  padding: 20px;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .action-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .user-roll-table {
+    font-size: 0.85rem;
+  }
+
+  .user-roll-table thead th,
+  .user-roll-table tbody td {
+    padding: 10px 8px;
+  }
+}
+
+/* Card Header Styling */
+.card-header.bg-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+  padding: 15px 20px;
+}
+
+.card-header h5 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Scrollbar Styling */
+.table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Faculty Modal Styles */
+.modal-header.bg-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.modal-body .bg-light {
+  border-left: 4px solid #667eea;
+}
+
+.basic-multi-select {
+  z-index: 1050;
+}
+
+.modal-body .badge {
+  font-size: 0.875rem;
+  padding: 8px 12px;
+}
+
+/* Faculty Selector Card (Inline) */
+.faculty-selector-card {
+  border: 2px solid #667eea;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faculty-selector-card .card-body {
+  padding: 20px;
+}
+
+/* Faculty Checkbox Container */
+.faculty-checkbox-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+
+.faculty-checkbox-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.faculty-checkbox-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.faculty-checkbox-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.faculty-checkbox-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.faculty-checkbox-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.faculty-checkbox-item:hover {
+  background-color: #f8f9fa;
+  border-color: #e2e8f0;
+}
+
+.faculty-checkbox-item .form-check-input {
+  width: 20px;
+  height: 20px;
+  margin-top: 0.15rem;
+  cursor: pointer;
+}
+
+.faculty-checkbox-item .form-check-input:checked {
+  background-color: #667eea;
+  border-color: #667eea;
+}
+
+.faculty-checkbox-label {
+  margin-left: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faculty-checkbox-label strong {
+  color: #2d3748;
+  font-size: 0.95rem;
+}
+
+.faculty-details {
+  margin-top: 4px;
+}
+
+.faculty-details small {
+  font-size: 0.8rem;
+}
+
+/* Multi-select custom styles */
+.select__control {
+  min-height: 45px !important;
+}
+
+.select__multi-value {
+  background-color: #667eea !important;
+}
+
+.select__multi-value__label {
+  color: white !important;
+  font-weight: 500;
+}
+
+.select__multi-value__remove {
+  color: white !important;
+}
+
+.select__multi-value__remove:hover {
+  background-color: #5568d3 !important;
+  color: white !important;
+}

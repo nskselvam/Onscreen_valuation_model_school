@@ -1,0 +1,39 @@
+  {
+    "users": [
+      {
+        "id": "0",
+        "name": "Admin",
+        "Header": "Examiner & Review"
+      },
+      {
+        "id": "1",
+        "name": "Chief Examiner ",
+        "Header": "Examiner & Review"
+      },
+      {
+        "id": "2",
+        "name": "Examiner",
+        "Header": "Examiner & Review"
+      },
+      {
+        "id": "3",
+        "name": "Review",
+        "Header": "Examiner & Review"
+      },
+      {
+        "id": "4",
+        "name": "Camp Officer",
+        "Header": "Examiner & Review"
+      },
+      {
+        "id": "5",
+        "name": "Camp Officer Assistant",
+        "Header": "Examiner & Review"
+      },
+      {
+        "id": "6",
+        "name": "Section Staff",
+        "Header": "Examiner & Review"
+      }
+    ]
+  }

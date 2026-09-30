@@ -1,0 +1,44 @@
+.val_design_left_1{
+    width: 110px;
+}
+.val_design_left_2{
+    width: 110px;
+}
+
+.val_design_left_icon_1{
+    font-size: 22px;
+}
+.val_design_left_icon_2{
+   font-size: 16px;
+  margin-top: -2px;
+}
+
+.pdf_design_tool_1{
+background-color: transparent;
+  overflow: auto !important;
+  color: black;
+}
+
+.val_design_left_3{
+ font-size: 10px;
+}
+
+.val_design_left_icon_3{
+    font-size: 22px;
+}
+.center_card_1{
+    margin-left: 38%;
+}
+
+.valuation-modal-images {
+height: 100%;
+}
+
+.page_size_design_1{
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.modal{
+   --bs-modal-padding: 0px  !important;
+}

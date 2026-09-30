@@ -1,0 +1,521 @@
+/* Clean navbar styles with better visibility */
+.gen-navbar {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: none !important;
+  box-shadow: 0 4px 20px rgba(30, 60, 114, 0.3);
+  padding: 0 1rem !important;
+  height: 70px;
+  min-height: 70px;
+  align-items: center;
+  transition: all 300ms ease;
+  z-index: 1200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.gen-navbar .container-fluid,
+.gen-navbar .container {
+  background: transparent !important;
+  padding: 0 1rem;
+}
+
+/* Remove any white line below navbar */
+.gen-navbar::after {
+  display: none !important;
+}
+
+.navbar {
+  border-bottom: none !important;
+}
+
+.gen-navbar:hover {
+  box-shadow: 0 6px 28px rgba(30, 60, 114, 0.4);
+}
+
+.gen-navbar .brand-mark {
+  width: 56px;
+  height: 56px;
+  margin-right: 14px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.gen-navbar .brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.gen-navbar .brand-text {
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.gen-navbar .brand-subtitle {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.gen-navbar .brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+/* Navbar Page Title */
+.navbar-page-title {
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.navbar-page-title h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+  .navbar-page-title {
+    display: none;
+  }
+}
+
+/* Footer styles — fixed to bottom and visually consistent with the navbar */
+.gen-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  background: color-mix(in srgb, rgba(255,255,255,0.92) 80%, rgba(236,244,255,1));
+  border-top: 1px solid rgba(11,27,38,0.06);
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: 0 -6px 18px rgba(9,30,45,0.03);
+}
+
+/* Footer text - simple and compact */
+.gen-footer .text-white {
+  color: color-mix(in srgb, #0b1b26 85%, #ffffff 15%);
+  font-size: 0.95rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dedicated footer text class to avoid being overridden by Bootstrap utilities */
+.gen-footer-text {
+  color: #05203a; /* strong dark color for high contrast */
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0 8px;
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Slightly increase footer prominence so text is readable above shadows */
+.gen-footer {
+  padding: 0.9rem 1rem;
+}
+
+
+.gen-navbar .nav-link {
+  color: #4a5568 !important;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px;
+  transition: all 200ms ease;
+}
+
+.gen-navbar .nav-link:hover {
+  color: #667eea !important;
+  background: rgba(102, 126, 234, 0.08);
+  transform: none;
+}
+
+@media (max-width: 991px) {
+  .gen-navbar .brand-text { font-size: 1.2rem }
+}
+
+/* Navbar layout */
+.gen-navbar { 
+  position: fixed;
+  display: flex;
+  align-items: center;
+}
+
+.gen-navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-right: auto;
+}
+
+.gen-navbar .navbar-toggler { 
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0.75rem;
+}
+
+.gen-navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.gen-navbar .navbar-collapse { 
+  justify-content: flex-end;
+}
+
+/* On small screens keep normal flow so toggler and brand don't overlap */
+@media (max-width: 767px) {
+  .gen-navbar .navbar-brand { position: static; transform: none; margin-right: 0 }
+  .gen-navbar .brand-text { font-size: 1.05rem }
+}
+
+/* === Government-style adjustments === */
+.gov-navbar {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%) !important;
+  color: #fff;
+  border-bottom: none !important;
+  box-shadow: 0 4px 20px rgba(30, 60, 114, 0.3);
+}
+
+.gov-navbar .brand-mark {
+  width: 56px;
+  height: 56px;
+  margin-right: 14px;
+  padding: 6px;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gov-navbar .brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.gov-navbar .brand-text-wrap { 
+  display: flex; 
+  flex-direction: column; 
+  line-height: 1.2;
+}
+
+.gov-navbar .brand-text { 
+  font-weight: 700; 
+  font-size: 1.3rem; 
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.gov-navbar .brand-subtitle { 
+  font-size: 0.8rem; 
+  color: rgba(255, 255, 255, 0.85); 
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+.gov-links .gov-nav-link { 
+  color: rgba(255, 255, 255, 0.95) !important; 
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 200ms ease;
+}
+
+.gov-links .gov-nav-link:hover { 
+  color: #fff !important; 
+  background: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+.gov-search .form-control { 
+  min-width: 280px; 
+  background: rgba(255, 255, 255, 0.1); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  color: #fff;
+  padding: 0.6rem 1rem;
+}
+
+.gov-search .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.gov-search .btn { 
+  color: #1e3a8a; 
+  background: #fbbf24;
+  font-weight: 600;
+  border: none;
+  padding: 0.6rem 1.25rem;
+}
+
+.gov-search .btn:hover {
+  background: #f59e0b;
+  color: #1e3a8a;
+}
+
+.gov-notify { position: relative }
+.notify-badge { position: absolute; top: -6px; right: -8px; transform: translate(0,0); }
+
+.gov-actions .gov-notify .bell { font-size: 1.2rem }
+
+/* compact spacing for small screens */
+@media (max-width: 991px) {
+  .gov-navbar .brand-mark { width: 44px; height: 44px; padding: 4px; }
+  .gov-search .form-control { min-width: 160px }
+  .gen-navbar .brand-text { font-size: 1.1rem }
+}
+
+/* accessibility helpers */
+.gov-navbar [role="menubar"] .nav-link { padding-left: 0.6rem; padding-right: 0.6rem }
+
+/* subtle hover focus ring for keyboard users */
+.gov-navbar .nav-link:focus, .gov-navbar .btn:focus, .gov-navbar .dropdown-toggle:focus { outline: 3px solid rgba(255,210,77,0.18); outline-offset: 2px }
+
+/* ensure dropdown menu contrast */
+.dropdown-menu { background: #0b2f58; color: #fff }
+.dropdown-menu .dropdown-item { color: rgba(255,255,255,0.95) }
+.dropdown-menu .dropdown-item:hover { background: rgba(255, 210, 77, 0.06); color: #ffd24d }
+
+/* Premium Navbar Enhancements */
+.premium-navbar {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%) !important;
+  border-bottom: none !important;
+  box-shadow: 0 4px 24px rgba(30, 60, 114, 0.35) !important;
+}
+
+.premium-navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 50%, rgba(255,255,255,0.02) 100%);
+  pointer-events: none;
+}
+
+.premium-brand-mark {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.premium-brand-text {
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.8px !important;
+}
+
+/* ========================================
+   VALUATION TAB BUTTONS - Enhanced Beauty & Alignment
+   ======================================== */
+
+/* Tab Container Wrapper - ensures perfect alignment */
+.valuation-tabs-wrapper {
+  display: flex;
+  gap: 0.4rem;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual Tab Button Styling */
+.valuation-tab-btn {
+  flex: 1;
+  min-width: 0;
+  height: 36px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+/* Inactive state */
+.valuation-tab-btn.inactive {
+  background: linear-gradient(135deg, #003cb3 0%, #0047cc 100%);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.valuation-tab-btn.inactive:hover {
+  background: linear-gradient(135deg, #0047cc 0%, #0052e6 100%);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 60, 179, 0.35);
+}
+
+/* Active state */
+.valuation-tab-btn.active {
+  background: linear-gradient(135deg, #0056b3 0%, #0064d9 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 86, 179, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Active indicator underline */
+.valuation-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  border-radius: 2px 2px 0 0;
+}
+
+/* Shine effect on hover */
+.valuation-tab-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.valuation-tab-btn:hover::before {
+  left: 100%;
+}
+
+/* Specific button styling for each tab */
+.valuation-tab-btn.question-tab {
+  background: linear-gradient(135deg, #003cb3 0%, #0047cc 100%);
+}
+
+.valuation-tab-btn.question-tab.active {
+  background: linear-gradient(135deg, #28a745 0%, #34ce57 100%);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.valuation-tab-btn.answer-tab {
+  background: linear-gradient(135deg, #1a5490 0%, #1f6bb3 100%);
+}
+
+.valuation-tab-btn.answer-tab.active {
+  background: linear-gradient(135deg, #17a2b8 0%, #1fc8e3 100%);
+  box-shadow: 0 4px 12px rgba(23, 162, 184, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.valuation-tab-btn.evaluated-tab {
+  background: linear-gradient(135deg, #2a6b9f 0%, #3280bd 100%);
+}
+
+.valuation-tab-btn.evaluated-tab.active {
+  background: linear-gradient(135deg, #fd7e14 0%, #ff9a3d 100%);
+  box-shadow: 0 4px 12px rgba(253, 126, 20, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.valuation-tab-btn.remarks-tab {
+  background: linear-gradient(135deg, #3a7aae 0%, #4591d0 100%);
+}
+
+.valuation-tab-btn.remarks-tab.active {
+  background: linear-gradient(135deg, #dc3545 0%, #f04556 100%);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.valuation-tab-btn.log-tab {
+  background: linear-gradient(135deg, #4a8abd 0%, #58a0db 100%);
+}
+
+.valuation-tab-btn.log-tab.active {
+  background: linear-gradient(135deg, #5fb7fc 0%, #6dcdff 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1440px) {
+  .valuation-tab-btn {
+    font-size: 0.8rem;
+    height: 34px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .valuation-tab-btn {
+    font-size: 0.75rem;
+    height: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .valuation-tab-btn {
+    font-size: 0.7rem;
+    height: 30px;
+    padding: 0 0.3rem;
+  }
+  
+  .valuation-tabs-wrapper {
+    gap: 0.25rem;
+  }
+}
+
+/* Focus state for accessibility */
+.valuation-tab-btn:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.4);
+  outline-offset: 2px;
+}
+
+/* Disabled state */
+.valuation-tab-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.valuation-tab-btn:disabled:hover {
+  transform: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}

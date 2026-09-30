@@ -1,0 +1,294 @@
+/* Idle Timeout Warning Modal Styles */
+
+.idle-timeout-modal .modal-content {
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: none;
+  overflow: hidden;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.idle-timeout-header {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+  border-bottom: none;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.idle-timeout-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.idle-timeout-header .btn-close {
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  position: relative;
+  z-index: 1;
+}
+
+.idle-timeout-header .btn-close:hover {
+  opacity: 1;
+}
+
+.idle-timeout-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  animation: pulse 2s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+  }
+}
+
+.idle-timeout-icon {
+  font-size: 32px;
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.idle-timeout-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.idle-timeout-body {
+  padding: 32px 28px;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+}
+
+.idle-timeout-message {
+  text-align: center;
+}
+
+.main-message {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.countdown-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.clock-icon {
+  font-size: 36px;
+  color: #ff6b6b;
+  animation: tickTock 1s ease-in-out infinite;
+}
+
+@keyframes tickTock {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.time-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-value {
+  font-size: 48px;
+  font-weight: 800;
+  color: #ff6b6b;
+  line-height: 1;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  text-shadow: 0 2px 4px rgba(255, 107, 107, 0.2);
+}
+
+.time-label {
+  font-size: 13px;
+  color: #718096;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.timeout-progress {
+  height: 10px;
+  border-radius: 10px;
+  margin: 20px 0;
+  background-color: #e2e8f0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.timeout-progress .progress-bar {
+  border-radius: 10px;
+  transition: width 1s linear, background-color 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.sub-message {
+  font-size: 14px;
+  color: #718096;
+  margin: 16px 0 0 0;
+  line-height: 1.6;
+}
+
+.idle-timeout-footer {
+  background: white;
+  border-top: 1px solid #e2e8f0;
+  padding: 20px 28px;
+  justify-content: center;
+}
+
+.stay-logged-in-btn {
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 40px;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(66, 153, 225, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stay-logged-in-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.stay-logged-in-btn:hover::before {
+  left: 100%;
+}
+
+.stay-logged-in-btn:hover {
+  background: linear-gradient(135deg, #3182ce 0%, #2c5aa0 100%);
+  box-shadow: 0 6px 20px rgba(66, 153, 225, 0.5);
+  transform: translateY(-2px);
+}
+
+.stay-logged-in-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(66, 153, 225, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .idle-timeout-modal .modal-content {
+    margin: 10px;
+  }
+
+  .idle-timeout-header {
+    padding: 20px;
+  }
+
+  .idle-timeout-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .idle-timeout-icon {
+    font-size: 28px;
+  }
+
+  .idle-timeout-title {
+    font-size: 18px;
+  }
+
+  .idle-timeout-body {
+    padding: 24px 20px;
+  }
+
+  .time-value {
+    font-size: 40px;
+  }
+
+  .clock-icon {
+    font-size: 30px;
+  }
+
+  .stay-logged-in-btn {
+    padding: 10px 30px;
+    font-size: 14px;
+    width: 100%;
+  }
+}
+
+/* Animation for countdown urgency */
+@keyframes urgent-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Add urgent pulse when time is running out */
+.idle-timeout-modal.urgent .time-value {
+  animation: urgent-pulse 0.5s ease-in-out infinite;
+  color: #e53e3e;
+}
+
+.idle-timeout-modal.urgent .clock-icon {
+  color: #e53e3e;
+}

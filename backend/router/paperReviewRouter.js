@@ -1,0 +1,10 @@
+const route = require('express').Router();
+const { protect } = require('../middleware/authMiddleware');
+const { paperReviewMailSend,paperReviewZero, paperReview, paperReviewDownload, paperReviewSearchBarcode,paperReviewExaminer } = require('../controller/paperReviewController');
+route.get('/', protect, paperReview);
+route.get('/paper-review-zero', protect, paperReviewZero);
+route.get('/search-barcode', protect, paperReviewSearchBarcode);
+route.post('/download', protect, paperReviewDownload);
+route.get('/paper-review-examiner', protect, paperReviewExaminer);
+route.post('/paper-mail-send', protect, paperReviewMailSend);
+module.exports = route;

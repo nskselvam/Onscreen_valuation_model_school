@@ -1,0 +1,357 @@
+/* Percentile Dashboard Styles */
+
+.percentile-dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding-bottom: 2rem;
+}
+
+/* Header Gradient */
+.percentile-header-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.25rem;
+  border: none;
+}
+
+.percentile-header-gradient h4 {
+  color: white;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Test Codes Header */
+.test-codes-header {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border: none;
+}
+
+/* Districts Header */
+.districts-header {
+  background: linear-gradient(135deg, #3f51b5 0%, #5a55ae 100%);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border: none;
+}
+
+/* Search Box */
+.search-box-wrapper {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #667eea;
+  z-index: 1;
+}
+
+.search-input {
+  padding-left: 38px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* Test Codes List */
+.test-codes-list {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.test-codes-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.test-codes-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.test-codes-list::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.test-codes-list::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}
+
+/* Test Code Card */
+.test-code-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+
+.test-code-card:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
+}
+
+.test-code-card.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #f5f7ff 0%, #e8ebff 100%);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.test-code-card h6 {
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Districts Table */
+.districts-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.districts-table thead {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.districts-table thead th {
+  border-bottom: 2px solid #667eea;
+  font-weight: 600;
+  color: #495057;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.districts-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.districts-table tbody tr:hover {
+  background: linear-gradient(135deg, #f8f9ff 0%, #e8ebff 100%);
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.districts-table tbody td {
+  padding: 0.875rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* Info Card */
+.info-card {
+  background: linear-gradient(135deg, #fff9e6 0%, #ffe9a5 100%);
+  border: 2px solid #ffc107;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.info-card h6 {
+  font-weight: 600;
+}
+
+/* Completed Test Codes Card */
+.completed-card {
+  border-radius: 12px;
+  border: 2px solid #28a745;
+  animation: slideInUp 0.5s ease-out;
+}
+
+.completed-header {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+  border: none;
+}
+
+.completed-header h5 {
+  color: white;
+  margin: 0;
+}
+
+.completed-test-card {
+  border: 2px solid #d4edda;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #f8fff9 0%, #e8f5e9 100%);
+}
+
+.completed-test-card:hover {
+  border-color: #28a745;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(40, 167, 69, 0.2);
+}
+
+.completed-test-card h6 {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.completed-test-card .text-success {
+  color: #28a745 !important;
+}
+
+/* Badges */
+.badge {
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Buttons */
+.btn {
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline-primary:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+}
+
+.btn-outline-success:hover {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  border-color: transparent;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  border: none;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #0f8a7f 0%, #32d96f 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(17, 153, 142, 0.3);
+}
+
+/* Cards */
+.card {
+  border-radius: 12px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.shadow-sm:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .test-codes-list {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .percentile-dashboard-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .test-codes-list {
+    max-height: 300px;
+  }
+
+  .districts-table thead th {
+    font-size: 0.75rem;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .districts-table tbody td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .btn-sm {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Loading Spinner */
+.spinner-border {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.15rem;
+}
+
+/* Table Responsive */
+.table-responsive {
+  max-height: 600px;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+
+.table-responsive::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}

@@ -1,0 +1,21 @@
+[
+{
+    "_id" : 1,
+    "InstitutionName" : "MODEL SCHOOL",
+    "Name" : "Onscreen Valuation",
+    "Image" : "../../assets/srm.jpg"
+
+},
+{
+    "_id" : 2,
+    "InstitutionName" : "MODEL SCHOOL",
+    "Name" : "Model School",
+    "Image" : "/Tamil_Nadu_Emblem.png"
+},
+{
+    "_id" : 3,
+    "InstitutionName" : "THIAGARAJAR COLLEGE",
+    "Name" : "THIAGARAJAR COLLEGE",
+    "Image" : "../../assets/tcarts.jpg"
+}
+]

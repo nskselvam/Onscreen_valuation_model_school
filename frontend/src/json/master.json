@@ -1,0 +1,9 @@
+
+{
+  "examinerRoles": [
+    { "id": "0", "name": "State User" },
+    { "id": "1", "name": "District User" },
+    { "id": "2", "name": "Student User" },
+    { "id": "3", "name": "Zone User" }
+  ] 
+}

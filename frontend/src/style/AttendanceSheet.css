@@ -1,0 +1,723 @@
+.attendance-sheet-container {
+  padding: 2rem 1rem;
+  min-height: calc(100vh - 80px);
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a2035;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.page-subtitle {
+  color: #6c757d;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* Table Styles */
+.attendance-table {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.attendance-table thead th {
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 600;
+  vertical-align: middle;
+  border-color: #0a58ca;
+  white-space: nowrap;
+}
+
+.attendance-table tbody tr:hover {
+  background-color: #f8f9fa;
+  transition: background-color 0.2s ease;
+}
+
+.attendance-table td {
+  vertical-align: middle;
+}
+
+/* Summary Table */
+.attendance-summary-table {
+  font-size: 0.85rem;
+  position: relative;
+}
+
+.attendance-summary-table .date-column {
+  min-width: 60px;
+  font-size: 0.75rem;
+  padding: 0.5rem 0.25rem;
+}
+
+.attendance-summary-table tbody td {
+  padding: 0.5rem 0.25rem;
+}
+
+.attendance-summary-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Sticky columns for summary view */
+.sticky-col-index {
+  position: sticky;
+  left: 0;
+  background-color: #0d6efd !important;
+  z-index: 100 !important;
+  min-width: 50px;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.2);
+}
+
+.sticky-col-user {
+  position: sticky;
+  left: 50px;
+  background-color: #0d6efd !important;
+  z-index: 100 !important;
+  min-width: 200px;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.2);
+}
+
+.sticky-col-total {
+  position: sticky;
+  left: 250px;
+  background-color: #0d6efd !important;
+  z-index: 100 !important;
+  min-width: 120px;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.2);
+}
+
+/* Sticky columns in tbody */
+.attendance-summary-table tbody .sticky-col-index,
+.attendance-summary-table tbody .sticky-col-user,
+.attendance-summary-table tbody .sticky-col-total {
+  background-color: white !important;
+  z-index: 90 !important;
+  border-right: 1px solid #dee2e6;
+}
+
+.attendance-summary-table tbody tr:hover .sticky-col-index,
+.attendance-summary-table tbody tr:hover .sticky-col-user,
+.attendance-summary-table tbody tr:hover .sticky-col-total {
+  background-color: #f8f9fa !important;
+  z-index: 90 !important;
+  border-right: 1px solid #dee2e6;
+}
+
+.attendance-summary-table tbody tr:nth-of-type(odd) .sticky-col-index,
+.attendance-summary-table tbody tr:nth-of-type(odd) .sticky-col-user,
+.attendance-summary-table tbody tr:nth-of-type(odd) .sticky-col-total {
+  background-color: #ffffff !important;
+  z-index: 90 !important;
+  border-right: 1px solid #dee2e6;
+}
+
+/* Regular table cells should have lower z-index */
+.attendance-summary-table td:not(.sticky-col-index):not(.sticky-col-user):not(.sticky-col-total),
+.attendance-summary-table th:not(.sticky-col-index):not(.sticky-col-user):not(.sticky-col-total) {
+  z-index: 1 !important;
+  position: relative;
+}
+
+.attendance-summary-table .date-column {
+  z-index: 1 !important;
+}
+
+/* Small text for email in summary view */
+.small-text {
+  font-size: 0.75rem;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.small-text:hover {
+  overflow: visible;
+  white-space: normal;
+  word-break: break-all;
+}
+
+/* User Details Cell */
+.user-details-cell {
+  padding: 0.25rem 0;
+  line-height: 1.4;
+}
+
+.user-details-cell > div {
+  margin-bottom: 0.15rem;
+}
+
+.user-details-cell > div:last-child {
+  margin-bottom: 0;
+}
+
+/* Table Container with Horizontal Scroll */
+.table-container {
+  max-height: 600px;
+  overflow-x: auto;
+  overflow-y: auto;
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  z-index: 0;
+}
+
+.table-container::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Daily Table Container with Vertical Scrolling */
+.daily-table-container {
+  max-height: 500px;
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+}
+
+/* Summary Table Container with Enhanced Scrolling */
+.summary-table-container {
+  max-height: 500px;
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+}
+
+.summary-table-container .attendance-summary-table {
+  min-width: max-content;
+}
+
+/* Pagination Container */
+.pagination-container {
+  padding: 1rem 0;
+  border-top: 1px solid #dee2e6;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pagination-info {
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Pagination Styles */
+.pagination {
+  margin-bottom: 0;
+}
+
+.pagination .page-link {
+  color: #0d6efd;
+  border: 1px solid #dee2e6;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.pagination .page-link:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+  color: #0a58ca;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: white;
+  font-weight: 600;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  background-color: #fff;
+  border-color: #dee2e6;
+}
+
+.pagination .page-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Stats Footer */
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.stat-label {
+  font-weight: 600;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: #1a2035;
+  font-size: 1.1rem;
+}
+
+/* Badge Styles */
+.badge {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Card Styles */
+.card {
+  border: none;
+  border-radius: 12px;
+  position: relative;
+  z-index: 0;
+  overflow: visible !important;
+}
+
+.card-body {
+  overflow: visible !important;
+  position: relative;
+  z-index: 0;
+}
+
+.card-header {
+  border-bottom: 2px solid #e9ecef;
+  padding: 1rem 1.25rem;
+  border-radius: 12px 12px 0 0 !important;
+  position: relative;
+  z-index: 0;
+}
+
+.card-body {
+  padding: 1.5rem;
+  position: relative;
+  z-index: 0;
+}
+
+/* Form Controls */
+.form-label {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.form-control,
+.form-select {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* React DatePicker Styling */
+.date-picker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+  display: block;
+}
+
+.react-datepicker__input-container {
+  display: block;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: white;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.react-datepicker__input-container input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+  outline: none;
+}
+
+.react-datepicker__input-container input:hover {
+  border-color: #86b7fe;
+}
+
+/* Calendar popup */
+.react-datepicker {
+  font-family: inherit;
+  border: 2px solid #5DADE2;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999 !important;
+  position: relative;
+  font-size: 0.75rem;
+}
+
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}
+
+.date-picker-popper {
+  z-index: 9999 !important;
+}
+
+.react-datepicker-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.react-datepicker__tab-loop {
+  z-index: 9999 !important;
+}
+
+.react-datepicker-popper[data-placement^="bottom"] {
+  margin-top: 8px;
+}
+
+.react-datepicker-popper[data-placement^="top"] {
+  margin-bottom: 8px;
+}
+
+.react-datepicker__header {
+  background-color: #5DADE2;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  padding: 10px 0;
+}
+
+.react-datepicker__current-month {
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.react-datepicker__day-name {
+  color: white;
+  font-weight: 600;
+  width: 1.8rem;
+  line-height: 1.6rem;
+  margin: 0.15rem;
+  font-size: 0.7rem;
+}
+
+.react-datepicker__month {
+  margin: 0.5rem;
+}
+
+.react-datepicker__day {
+  width: 1.8rem;
+  line-height: 1.8rem;
+  margin: 0.15rem;
+  border-radius: 4px;
+  color: white;
+  background-color: #2874A6;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  font-size: 0.75rem;
+}
+
+.react-datepicker__day:hover {
+  background-color: #1F618D;
+  transform: scale(1.05);
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #1F618D;
+  color: white;
+  font-weight: 700;
+}
+
+.react-datepicker__day--today {
+  background-color: #85C1E2;
+  color: white;
+  font-weight: 700;
+}
+
+.react-datepicker__day--disabled {
+  background-color: #BDC3C7;
+  color: #95A5A6;
+  cursor: not-allowed;
+}
+
+.react-datepicker__day--disabled:hover {
+  background-color: #BDC3C7;
+  transform: none;
+}
+
+.react-datepicker__day--outside-month {
+  background-color: transparent;
+  color: #95A5A6;
+}
+
+/* Month and Year dropdowns */
+.react-datepicker__month-dropdown-container,
+.react-datepicker__year-dropdown-container {
+  margin: 0 5px;
+}
+
+.react-datepicker__month-read-view,
+.react-datepicker__year-read-view {
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 2px 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.react-datepicker__month-dropdown,
+.react-datepicker__year-dropdown {
+  background-color: white;
+  border: 2px solid #5DADE2;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.react-datepicker__month-option,
+.react-datepicker__year-option {
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.react-datepicker__month-option:hover,
+.react-datepicker__year-option:hover {
+  background-color: #EBF5FB;
+}
+
+.react-datepicker__month-option--selected,
+.react-datepicker__year-option--selected {
+  background-color: #5DADE2;
+  color: white;
+  font-weight: 700;
+}
+
+.react-datepicker__navigation {
+  top: 12px;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: white;
+  border-width: 1.5px 1.5px 0 0;
+  height: 6px;
+  width: 6px;
+}
+
+.react-datepicker__triangle {
+  display: none;
+}
+
+/* Button Styles */
+.btn {
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-group .btn {
+  border-radius: 8px;
+}
+
+.btn-group .btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group .btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Alert Styles */
+.alert {
+  border-radius: 8px;
+  border: none;
+  padding: 1rem 1.25rem;
+}
+
+.alert-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Table Responsive */
+.table-responsive {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Shadow */
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .attendance-sheet-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .attendance-table,
+  .attendance-summary-table {
+    font-size: 0.8rem;
+  }
+
+  .stat-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .btn {
+    font-size: 0.875rem;
+    padding: 0.375rem 0.75rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .btn,
+  .form-control,
+  .form-select,
+  .card-header button {
+    display: none !important;
+  }
+
+  .attendance-sheet-container {
+    padding: 0;
+  }
+
+  .table {
+    font-size: 0.75rem;
+  }
+
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #dee2e6;
+  }
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+/* Icon Styles */
+svg {
+  vertical-align: middle;
+}
+
+/* Hover Effects */
+.table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* Present/Absent Icons */
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+.text-info {
+  color: #17a2b8 !important;
+}
+
+/* Card Animation */
+.card {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+.table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

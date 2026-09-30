@@ -1,0 +1,45 @@
+POST http://localhost:8000/api/auth/login/
+content-type: application/json
+
+{
+    "email":"nskselvam",
+    "password":"Priya@2308"
+}
+###
+
+POST http://localhost:8000/api/auth/logout/
+content-type: application/json
+
+{
+    "email":"svndatawork@gmail.com"
+}
+###
+
+GET http://localhost:8000/api/updata_master_data/user-details-original
+
+
+###
+GET http://localhost:8000/api/updata_master_data/user-details-insert
+
+
+###
+GET http://localhost:8000/api/master/get_district_master_data
+
+
+###
+GET http://localhost:8000/api/master/get_district_selected_data
+
+###
+GET http://localhost:8000/api/updata_master_data/generateRank
+
+
+###
+GET http://localhost:8000/api/updata_master_data/vacancyAllot
+
+###
+
+GET http://localhost:8020/api/updata_master_data/passwordReset
+
+### 
+
+ GET http://localhost:8020/api/updata_master_data/mailsentPasswordReset

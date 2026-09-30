@@ -1,0 +1,301 @@
+.auditing-dashboard-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.auditing-subject-card {
+  border-radius: 14px;
+  padding: 18px;
+  color: #ffffff;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.auditing-subject-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.24);
+}
+
+.auditing-subject-card:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+
+.auditing-card-theme-blue {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 45%, #3b82f6 100%);
+}
+
+.auditing-card-theme-emerald {
+  background: linear-gradient(135deg, #047857 0%, #059669 45%, #10b981 100%);
+}
+
+.auditing-card-theme-indigo {
+  background: linear-gradient(135deg, #3730a3 0%, #4338ca 45%, #6366f1 100%);
+}
+
+.auditing-card-theme-orange {
+  background: linear-gradient(135deg, #c2410c 0%, #ea580c 45%, #f97316 100%);
+}
+
+.auditing-card-theme-teal {
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 45%, #14b8a6 100%);
+}
+
+.auditing-card-theme-rose {
+  background: linear-gradient(135deg, #be123c 0%, #e11d48 45%, #f43f5e 100%);
+}
+
+.auditing-subject-code {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.auditing-subject-name {
+  margin: 12px 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.auditing-subject-eva {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.auditing-subject-eva-label {
+  opacity: 0.85;
+}
+
+.auditing-subject-eva-value {
+  font-weight: 700;
+}
+
+.auditing-subject-barcode {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.auditing-subject-barcode-label {
+  opacity: 0.85;
+}
+
+.auditing-subject-barcode-value {
+  font-weight: 700;
+}
+
+.auditing-table-view-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 14px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.auditing-table-view-button:hover {
+  background: #bfdbfe;
+  transform: translateY(-1px);
+}
+
+.auditing-table-view-button:focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+.auditing-dashboard-state {
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+.auditing-dashboard-error {
+  color: #dc2626;
+}
+
+.auditing-modal-subject-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.auditing-modal-subject-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.auditing-barcode-search-group {
+  margin-bottom: 16px;
+}
+
+.auditing-barcode-search-input {
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  box-shadow: none;
+}
+
+.auditing-barcode-search-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.auditing-datatable-wrapper {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.auditing-barcode-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.auditing-barcode-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.auditing-barcode-index {
+  min-width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.auditing-barcode-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  word-break: break-all;
+}
+
+.auditing-empty-barcodes {
+  padding: 18px;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #475569;
+  text-align: center;
+  font-weight: 600;
+}
+
+.auditing-barcode-modal-dialog {
+  width: min(1120px, 96vw);
+  max-width: min(1120px, 96vw);
+}
+
+.auditing-barcode-modal-content {
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.auditing-barcode-modal-body {
+  max-height: calc(90vh - 130px);
+  overflow-y: auto;
+  padding-bottom: 12px;
+}
+
+.auditing-barcode-modal-body .auditing-datatable-wrapper {
+  overflow-x: auto;
+}
+
+.auditing-row-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.auditing-row-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.auditing-row-detail-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.auditing-row-detail-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  word-break: break-all;
+}
+
+@media (max-width: 768px) {
+  .auditing-barcode-modal-dialog {
+    width: 98vw;
+    max-width: 98vw;
+    margin: 0.5rem auto;
+  }
+
+  .auditing-barcode-modal-content {
+    max-height: 94vh;
+  }
+
+  .auditing-barcode-modal-body {
+    max-height: calc(94vh - 122px);
+    padding: 12px;
+  }
+
+  .auditing-dashboard-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auditing-barcode-list {
+    grid-template-columns: 1fr;
+  }
+
+  .auditing-row-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}

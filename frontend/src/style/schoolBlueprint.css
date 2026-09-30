@@ -1,0 +1,103 @@
+/* Image Container - covers entire left section */
+.school-image-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+/* Add subtle overlay gradient for depth */
+.school-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 58, 138, 0.05) 0%,
+    rgba(59, 130, 246, 0.08) 50%,
+    rgba(30, 64, 175, 0.1) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Right side shadow effect for depth */
+.school-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -2px;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 58, 138, 0.1),
+    rgba(30, 58, 138, 0.15),
+    rgba(30, 58, 138, 0.1)
+  );
+  box-shadow: 2px 0 20px rgba(30, 58, 138, 0.1);
+  z-index: 2;
+}
+
+/* OMR Sheet Image - full coverage */
+.omr-sheet-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  min-height: 100vh;
+  filter: brightness(1.02) contrast(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Subtle hover effect */
+.school-image-container:hover .omr-sheet-image {
+  filter: brightness(1.05) contrast(1.08);
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 1300px) {
+  .omr-sheet-image {
+    object-fit: cover;
+  }
+  
+  .school-image-container::after {
+    background: linear-gradient(
+      135deg,
+      rgba(30, 58, 138, 0.08) 0%,
+      rgba(59, 130, 246, 0.12) 50%,
+      rgba(30, 64, 175, 0.15) 100%
+    );
+  }
+}
+
+@media (max-width: 1100px) {
+  .school-image-container {
+    display: none;
+  }
+}
+
+/* Smooth entrance animation */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.school-image-container {
+  animation: fadeInSlide 0.8s ease-out;
+}
