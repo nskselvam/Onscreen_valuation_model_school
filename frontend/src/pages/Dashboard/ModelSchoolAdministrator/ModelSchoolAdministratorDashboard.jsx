@@ -15,6 +15,7 @@ import {
 } from "react-icons/fi";
 import { useSelector } from "react-redux";
 import { useGetModelSchoolAdministratorDashboardQuery } from "../../../redux-slice/modelSchoolAdministratorApiSlice";
+import ModelSchoolAdministratorNav from "./ModelSchoolAdministratorNav";
 import "./ModelSchoolAdministratorDashboard.css";
 
 const PAGE_SIZE = 25;
@@ -96,24 +97,24 @@ const ModelSchoolAdministratorDashboard = () => {
   const maxDaily = Math.max(1, ...(data?.daily_activity || []).map((row) => Number(row.valuated)));
 
   if (isLoading) {
-    return <div className="msa-state"><span className="msa-spinner" />Loading live valuation report...</div>;
+    return <><ModelSchoolAdministratorNav /><div className="msa-state"><span className="msa-spinner" />Loading live valuation report...</div></>;
   }
 
   if (error) {
     return (
-      <div className="msa-state msa-state--error">
+      <><ModelSchoolAdministratorNav /><div className="msa-state msa-state--error">
         <FiAlertCircle />
         <strong>Dashboard data could not be loaded</strong>
         <span>{error?.data?.message || "Please check the backend connection."}</span>
         <button type="button" onClick={refetch}><FiRefreshCw /> Retry</button>
-      </div>
+      </div></>
     );
   }
 
   const summary = data?.summary || {};
 
   return (
-    <main className="msa-dashboard">
+    <><ModelSchoolAdministratorNav /><main className="msa-dashboard">
       <header className="msa-header">
         <div>
           <span className="msa-header__eyebrow">LIVE VALUATION CONTROL</span>
@@ -232,7 +233,7 @@ const ModelSchoolAdministratorDashboard = () => {
         <strong>How to read this report</strong>
         {Object.entries(data.definitions || {}).slice(0, 5).map(([key, value]) => <span key={key}><i className={`status-${key}`} /> <b>{key.replaceAll("_", " ")}:</b> {value}</span>)}
       </section>
-    </main>
+    </main></>
   );
 };
 

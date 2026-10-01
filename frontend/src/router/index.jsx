@@ -38,6 +38,10 @@ const Userollmaster = lazy(() => import("../pages/UserRoll/Userollmaster.jsx"));
 const Admin_Dashboard = lazy(() => import("../pages/Dashboard/admin_dashboard/Admin_Dashboard.jsx"));
 const AdminMainDashboard = lazy(() => import("../pages/Dashboard/Admin/AdminMainDashboard.jsx"));
 const ModelSchoolAdministratorDashboard = lazy(() => import("../pages/Dashboard/ModelSchoolAdministrator/ModelSchoolAdministratorDashboard.jsx"));
+const ModelSchoolAdministratorNewDashboard = lazy(() => import("../pages/Dashboard/ModelSchoolAdministrator/ModelSchoolAdministratorNewDashboard.jsx"));
+const ModelSchoolAdministratorStudentsMark = lazy(() => import("../pages/Dashboard/ModelSchoolAdministrator/ModelSchoolAdministratorStudentsMark.jsx"));
+const DistrictUploadProcessing = lazy(() => import("../pages/Dashboard/ModelSchoolAdministrator/DistrictUploadProcessing.jsx"));
+const ModelSchoolPendingPapers = lazy(() => import("../pages/Dashboard/ModelSchoolAdministrator/ModelSchoolPendingPapers.jsx"));
 
 const ExaminerValuation = lazy(() => import("../pages/Dashboard/Main/ExaminerValuation.jsx"));
 const ValuationMain = lazy(() => import("../pages/Valuation/ValuationMain.jsx"));
@@ -119,6 +123,10 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route path="/admin/dashboard" element={<LazyRoute component={Admin_Dashboard} />} />
       <Route path="/admin/main-dashboard" element={<LazyRoute component={AdminMainDashboard} />} />
       <Route path="/model-school-administrator/dashboard" element={<LazyRoute component={ModelSchoolAdministratorDashboard} />} />
+      <Route path="/model-school-administrator/new-dashboard" element={<LazyRoute component={ModelSchoolAdministratorNewDashboard} />} />
+      <Route path="/model-school-administrator/students-mark" element={<LazyRoute component={ModelSchoolAdministratorStudentsMark} />} />
+      <Route path="/model-school-administrator/uploads" element={<LazyRoute component={DistrictUploadProcessing} />} />
+      <Route path="/model-school-administrator/pending-papers" element={<LazyRoute component={ModelSchoolPendingPapers} />} />
       <Route path="/svn/uploadImages" element={<LazyRoute component={UploadImages} />} />
       <Route path="/svn/excel-file-creation" element={<LazyRoute component={ExcelFileCreation} />} />
       <Route path="/svn/excel-text-upload" element={<LazyRoute component={ExcelTextUpload} />} />

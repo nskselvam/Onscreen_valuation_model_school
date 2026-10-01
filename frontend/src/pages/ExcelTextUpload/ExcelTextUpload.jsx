@@ -15,6 +15,27 @@ import { useDispatch, useSelector } from "react-redux";
 import { errDataInfo, errRemove } from "../../redux-slice/errResponseSlice";
 import { parseCSVFromString } from "../../utils/txtFile";
 
+// Live nginx rejects request bodies above 1 MB.
+const MAX_BATCH_BYTES = 500 * 1024;
+
+const splitIntoBatches = (items, sizeOf) => {
+  const batches = [];
+  let current = [];
+  let currentBytes = 0;
+  for (const item of items) {
+    const bytes = sizeOf(item);
+    if (current.length > 0 && currentBytes + bytes > MAX_BATCH_BYTES) {
+      batches.push(current);
+      current = [];
+      currentBytes = 0;
+    }
+    current.push(item);
+    currentBytes += bytes;
+  }
+  if (current.length > 0) batches.push(current);
+  return batches;
+};
+
 const ExcelTextUpload = () => {
   const OptionFiles = excelresources.fileTypes;
   const [excelFile, setExcelFile] = useState(null);
@@ -170,7 +191,30 @@ const ExcelTextUpload = () => {
 
     if (uploadFileType !== "15") {
       try {
-        const response = await exceltext(dataToSend).unwrap();
+        const encoder = new TextEncoder();
+        const isTextUpload = uploadFileType === "1" && !!textData;
+        const textBatches = isTextUpload
+          ? splitIntoBatches(textData.split("\n"), (line) => encoder.encode(line).length + 1).map((lines) => lines.join("\n"))
+          : [null];
+        const excelBatches = Array.isArray(excelData) && excelData.length > 0
+          ? splitIntoBatches(excelData, (row) => encoder.encode(JSON.stringify(row)).length + 1)
+          : [excelData];
+        const requests = isTextUpload
+          ? textBatches.map((batch) => ({ ...dataToSend, textData: batch, excelData: null }))
+          : excelBatches.map((batch) => ({ ...dataToSend, excelData: batch, textData: null }));
+
+        const response = { ErrorFlag: false, Error_responseData: [], TotalRecordCnt: 0, RecrodCnt: 0 };
+        for (const [index, request] of requests.entries()) {
+          if (requests.length > 1) {
+            setUploadStatus(`Uploading batch ${index + 1} of ${requests.length}...`);
+            setUploadVariant("info");
+          }
+          const batchResponse = await exceltext(request).unwrap();
+          response.ErrorFlag = response.ErrorFlag || batchResponse.ErrorFlag === true;
+          response.Error_responseData.push(...(batchResponse.Error_responseData || []));
+          response.TotalRecordCnt += Number(batchResponse.TotalRecordCnt || 0);
+          response.RecrodCnt += Number(batchResponse.RecrodCnt || 0);
+        }
 
         if (response.ErrorFlag === true) {
           setUploadStatus("Upload completed with errors. " + (response.TotalRecordCnt || 0) + " total records and " + (response.RecrodCnt || 0) + " records processed. Check error log below.");

@@ -779,12 +779,13 @@ const getValuationPendingDetails = asyncHandler(async (req, res) => {
         });
     }
 
-    whereClause = Valuation_Type === '5' ? { Chief_Checked: 'NO', Chief_E_flg: 'A' } : { Checked: 'NO', E_flg: 'A' };
+    const whereClause = Valuation_Type === '5' ? { Chief_Checked: 'NO', Chief_E_flg: 'A' } : { Checked: 'NO', E_flg: 'A' };
+    const assignmentDateField = Valuation_Type === '5' ? 'Chief_A_date' : 'A_date';
 
     const pendingDetails = await db[flname].findAll({
         where: whereClause,
         attributes: ['id', 'subcode', 'testcode', 'Evaluator_Id', 'Dep_Name', 'barcode', 'Camp_id', 'camp_offcer_id_examiner', 'A_date', 'Chief_checkdate_Valuation', 'Chief_A_date', 'Chief_Valuation_Evaluator_Id'],
-        order: [['A_date', 'ASC']]
+        order: [[assignmentDateField, 'ASC']]
     });
 
     // Fetch faculty details
@@ -799,10 +800,15 @@ const getValuationPendingDetails = asyncHandler(async (req, res) => {
 
 
     // Map pending details with faculty names and camp officer details
+    const currentDate = parseISTDateTime(getCurrentISTDateTime());
     const pendingDetailsWithFaculty = pendingDetails.map(pending => {
         const faculty = faculties.find(f => f.Eva_Id == (Valuation_Type == '5' ? pending.Chief_Valuation_Evaluator_Id : pending.Evaluator_Id));
         const campOfficer = faculties.find(f => f.Eva_Id === pending.camp_offcer_id_examiner);
         const subject = subjects.find(s => s.Subcode === pending.subcode);
+        const assignedAt = parseISTDateTime(Valuation_Type === '5' ? pending.Chief_A_date : pending.A_date);
+        const pendingHours = currentDate && assignedAt
+            ? (currentDate - assignedAt) / (1000 * 60 * 60)
+            : null;
 
         return {
             ...pending.toJSON(),
@@ -812,7 +818,9 @@ const getValuationPendingDetails = asyncHandler(async (req, res) => {
             Camp_Officer_Name: campOfficer ? campOfficer.FACULTY_NAME : null,
             Camp_Officer_Mobile: campOfficer ? campOfficer.Mobile_Number : null,
             Camp_Officer_Email: campOfficer ? campOfficer.Email_Id : null,
-            Subject_Name: subject ? subject.SUBNAME : null
+            Subject_Name: subject ? subject.SUBNAME : null,
+            Pending_Hours: Number.isFinite(pendingHours) ? Number(pendingHours.toFixed(1)) : null,
+            Can_Clear: Number.isFinite(pendingHours) && pendingHours >= 5
         };
     });
 

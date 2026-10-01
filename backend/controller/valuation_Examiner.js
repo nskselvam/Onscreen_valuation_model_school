@@ -205,22 +205,6 @@ const valuation_Barcode_Fetch = asyncHandler(async (req, res) => {
 
   console.log(barcodeCount, Subject_Max_BarcodeCount, "Counts for today");
 
-  if (barcodeCount >= parseInt(Max_Papers)) {
-    res.status(201);
-    throw new AppError("You have reached the maximum limit for today", 201);
-  }
-
-  if (
-    parseInt(Sub_Max_Papers) > 0 &&
-    Subject_Max_BarcodeCount >= parseInt(Sub_Max_Papers)
-  ) {
-    res.status(201);
-    throw new AppError(
-      "You have reached the maximum limit for this subject today",
-      201
-    );
-  }
-
   let ValuationSessionTime;
   let ValuationSession;
   let Max_Papers_Count = (parseInt(Max_Papers) / 2) - parseInt(barcodeCount);
